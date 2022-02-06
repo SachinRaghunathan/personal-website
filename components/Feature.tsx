@@ -3,26 +3,34 @@ import * as React from "react";
 
 interface FeatureProps {
   title: string;
-  text: string;
-  icon: React.ReactElement;
+  icon?: React.ReactElement;
+  text?: string;
 }
 
 export const Feature = (props: FeatureProps) => {
-  const { title, text, icon } = props;
+  const { title, text } = props;
   return (
-    <Stack
-      spacing={{ base: "3", md: "6" }}
-      direction={{ base: "column", md: "row" }}
-      align="center"
-      w="80%"
+    <Box
+      as="button"
+      bg="backgroundColor"
+      w="360px"
+      h="175px"
+      rounded={{ md: "lg" }}
+      borderWidth={1}
+      transition="all 0.2s"
+      textUnderlineOffset="2"
+      _hover={{
+        fontSize: "lg",
+      }}
     >
-      <Box fontSize="6xl">{icon}</Box>
-      <Stack spacing="1">
-        <Text fontWeight="extrabold" fontSize="lg" align="center">
+      <Stack paddingLeft={8}>
+        <Text fontWeight="extrabold" fontFamily="monospace" align="left">
           {title}
         </Text>
-        <Text align="center">{text}</Text>
+        <Text fontFamily="monospace" align="left" fontSize="md">
+          {text}
+        </Text>
       </Stack>
-    </Stack>
+    </Box>
   );
 };

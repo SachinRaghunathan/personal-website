@@ -1,11 +1,5 @@
 import { MoonIcon } from "@chakra-ui/icons";
-import {
-  Center,
-  Container,
-  useColorModeValue,
-  Wrap,
-  WrapItem,
-} from "@chakra-ui/react";
+import { Center, Container, Wrap, WrapItem } from "@chakra-ui/react";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import { Feature } from "../components/Feature";
@@ -19,39 +13,34 @@ export default function Home() {
         <Head>
           <title>{siteTitle}</title>
         </Head>
-        <Container width="100%">
-          <Wrap spacing="20px" justify="center">
+        <Center>
+          <Wrap width="80%" spacing="30px" justify="center">
             <WrapItem>
-              <Center
-                bg={useColorModeValue("gray.100", "gray.700")}
-                w="310px"
-                h="175px"
-                rounded={{ md: "lg" }}
-              >
-                <Feature
-                  title="About me"
-                  icon={<MoonIcon />}
-                  text="Let's get to know each other"
-                ></Feature>
-              </Center>
+              <Feature
+                title="About me"
+                icon={<MoonIcon />}
+                text="Oh hello!"
+              ></Feature>
             </WrapItem>
             <WrapItem>
-              <Center w="310px" h="175px" bg="green.200">
-                Box 2
-              </Center>
+              <Feature
+                title="Credit Cards 💳"
+                icon={<MoonIcon />}
+                text="Business class, everytime 😎"
+              ></Feature>
             </WrapItem>
             <WrapItem>
-              <Center w="310px" h="175px" bg="tomato">
-                Box 3
-              </Center>
+              <Feature
+                title="Blog"
+                icon={<MoonIcon />}
+                text="Random thoughts"
+              ></Feature>
             </WrapItem>
             <WrapItem>
-              <Center w="310px" h="175px" bg="blue.200">
-                Box 4
-              </Center>
+              <Feature title="Resume" icon={<MoonIcon />}></Feature>
             </WrapItem>
           </Wrap>
-        </Container>
+        </Center>
       </Layout>
     </Container>
   );

@@ -19,7 +19,8 @@ const Header = () => {
       role="contentinfo"
       mx="auto"
       maxW="7xl"
-      py="12"
+      paddingTop="4"
+      paddingBottom="6"
       px={{ base: "4", md: "8" }}
     >
       <Stack direction="row" spacing="4" align="center" justify="space-between">

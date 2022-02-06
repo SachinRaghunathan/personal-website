@@ -9,7 +9,8 @@ export const Footer = () => (
     role="contentinfo"
     mx="auto"
     maxW="7xl"
-    py="12"
+    paddingBottom="4"
+    paddingTop="12"
     px={{ base: "4", md: "8" }}
   >
     <Divider />
