@@ -1,6 +1,14 @@
-import { Center, Container, Wrap, WrapItem } from "@chakra-ui/react";
+import { MoonIcon } from "@chakra-ui/icons";
+import {
+  Center,
+  Container,
+  useColorModeValue,
+  Wrap,
+  WrapItem,
+} from "@chakra-ui/react";
 import { GetStaticProps } from "next";
 import Head from "next/head";
+import { Feature } from "../components/Feature";
 import Layout, { siteTitle } from "../components/layout";
 import { getSortedPostsData } from "../lib/posts";
 
@@ -14,8 +22,17 @@ export default function Home() {
         <Container width="100%">
           <Wrap spacing="20px" justify="center">
             <WrapItem>
-              <Center w="310px" h="175px" bg="red.200">
-                Box 1
+              <Center
+                bg={useColorModeValue("gray.100", "gray.700")}
+                w="310px"
+                h="175px"
+                rounded={{ md: "lg" }}
+              >
+                <Feature
+                  title="About me"
+                  icon={<MoonIcon />}
+                  text="Let's get to know each other"
+                ></Feature>
               </Center>
             </WrapItem>
             <WrapItem>
