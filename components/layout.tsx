@@ -1,7 +1,7 @@
-import { Avatar, Heading, VStack } from "@chakra-ui/react";
-import Head from "next/head";
+import { Stack } from "@chakra-ui/react";
 import Link from "next/link";
-import utilStyles from "../styles/utils.module.css";
+import { Footer } from "./Footer/Footer";
+import Header from "./Header/Header";
 import styles from "./layout.module.css";
 
 const name = "Sachin Raghunathan";
@@ -15,30 +15,14 @@ export default function Layout({
   home?: boolean;
 }) {
   return (
-    <div className={styles.container}>
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
-        <meta
-          property="og:image"
-          content={`https://og-image.vercel.app/${encodeURI(
-            siteTitle
-          )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
-        />
-        <meta name="og:title" content={siteTitle} />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
-      <header className={styles.header}>
-        {home ? (
+    <>
+      {/* {home ? (
           <VStack spacing={8}>
             <Avatar
               name="Sachin Raghunathan"
               src="/images/profile.jpg"
               size="2xl"
-            ></Avatar>
+            />
             <Heading>Sachin Raghunathan</Heading>
           </VStack>
         ) : (
@@ -58,16 +42,20 @@ export default function Layout({
               </Link>
             </h2>
           </>
+        )} */}
+      <Header />
+      <Stack direction="column" spacing={8} justify="space-between">
+        <main>{children}</main>
+        {!home && (
+          <div className={styles.backToHome}>
+            <Link href="/">
+              <a>← Back to home</a>
+            </Link>
+          </div>
         )}
-      </header>
-      <main>{children}</main>
-      {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">
-            <a>← Back to home</a>
-          </Link>
-        </div>
-      )}
-    </div>
+      </Stack>
+
+      <Footer />
+    </>
   );
 }
