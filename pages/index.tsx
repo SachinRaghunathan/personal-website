@@ -1,4 +1,4 @@
-import { Box, Center, Container, SimpleGrid } from "@chakra-ui/react";
+import { Center, Container, Wrap, WrapItem } from "@chakra-ui/react";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
@@ -11,14 +11,30 @@ export default function Home() {
         <Head>
           <title>{siteTitle}</title>
         </Head>
-        <Center>
-          <SimpleGrid w="60%" columns={2} spacingX="40px" spacingY="20px">
-            <Box bg="tomato" height="160px"></Box>
-            <Box bg="tomato" height="160px"></Box>
-            <Box bg="tomato" height="160px"></Box>
-            <Box bg="tomato" height="160px"></Box>
-          </SimpleGrid>
-        </Center>
+        <Container width="100%">
+          <Wrap spacing="20px" justify="center">
+            <WrapItem>
+              <Center w="310px" h="175px" bg="red.200">
+                Box 1
+              </Center>
+            </WrapItem>
+            <WrapItem>
+              <Center w="310px" h="175px" bg="green.200">
+                Box 2
+              </Center>
+            </WrapItem>
+            <WrapItem>
+              <Center w="310px" h="175px" bg="tomato">
+                Box 3
+              </Center>
+            </WrapItem>
+            <WrapItem>
+              <Center w="310px" h="175px" bg="blue.200">
+                Box 4
+              </Center>
+            </WrapItem>
+          </Wrap>
+        </Container>
       </Layout>
     </Container>
   );
