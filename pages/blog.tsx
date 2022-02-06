@@ -1,5 +1,7 @@
+import { GetStaticProps } from "next";
 import Link from "next/link";
 import Date from "../components/date";
+import { getSortedPostsData } from "../lib/posts";
 import utilStyles from "../styles/utils.module.css";
 
 const Blog = ({
@@ -32,3 +34,12 @@ const Blog = ({
 };
 
 export default Blog;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const allPostsData = getSortedPostsData();
+  return {
+    props: {
+      allPostsData,
+    },
+  };
+};
