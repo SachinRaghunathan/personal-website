@@ -1,18 +1,18 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
-import Link from 'next/link'
+import { Avatar, Heading, VStack } from "@chakra-ui/react";
+import Head from "next/head";
+import Link from "next/link";
+import utilStyles from "../styles/utils.module.css";
+import styles from "./layout.module.css";
 
-const name = 'Sachin Raghunathan'
-export const siteTitle = 'Next.js Sample Website'
+const name = "Sachin Raghunathan";
+export const siteTitle = "Sachin Raghunathan";
 
 export default function Layout({
   children,
-  home
+  home,
 }: {
-  children: React.ReactNode
-  home?: boolean
+  children: React.ReactNode;
+  home?: boolean;
 }) {
   return (
     <div className={styles.container}>
@@ -33,28 +33,22 @@ export default function Layout({
       </Head>
       <header className={styles.header}>
         {home ? (
-          <>
-            <Image
-              priority
+          <VStack spacing={8}>
+            <Avatar
+              name="Sachin Raghunathan"
               src="/images/profile.jpg"
-              className={utilStyles.borderCircle}
-              height={144}
-              width={144}
-              alt={name}
-            />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
-          </>
+              size="2xl"
+            ></Avatar>
+            <Heading>Sachin Raghunathan</Heading>
+          </VStack>
         ) : (
           <>
             <Link href="/">
               <a>
-                <Image
-                  priority
+                <Avatar
+                  name="Sachin Raghunathan"
                   src="/images/profile.jpg"
-                  className={utilStyles.borderCircle}
-                  height={108}
-                  width={108}
-                  alt={name}
+                  size="xl"
                 />
               </a>
             </Link>
@@ -75,5 +69,5 @@ export default function Layout({
         </div>
       )}
     </div>
-  )
+  );
 }
