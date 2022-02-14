@@ -1,5 +1,7 @@
+import { Container, Text } from "@chakra-ui/react";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
+import ReactMarkdown from "react-markdown";
 import Date from "../../components/date";
 import { Footer } from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
@@ -12,7 +14,7 @@ export default function Post({
   postData: {
     title: string;
     date: string;
-    contentHtml: string;
+    fileContents: string;
   };
 }) {
   return (
@@ -21,13 +23,13 @@ export default function Post({
       <Head>
         <title>{postData.title}</title>
       </Head>
-      <article>
+      <Container maxW="container.md">
         <h1 className={utilStyles.headingXl}>{postData.title}</h1>
-        <div className={utilStyles.lightText}>
+        <Text color="gray" paddingBottom={3}>
           <Date dateString={postData.date} />
-        </div>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-      </article>
+        </Text>
+        <ReactMarkdown children={postData.fileContents} />
+      </Container>
       <Footer />
     </>
   );
