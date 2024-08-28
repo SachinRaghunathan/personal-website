@@ -8,7 +8,7 @@ import {
   Stack,
   useColorMode,
 } from "@chakra-ui/react";
-import React from "react";
+import Link from "next/link";
 
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -25,12 +25,16 @@ const Header = () => {
     >
       <Stack direction="row" spacing="4" align="center" justify="space-between">
         <Stack direction="row" spacing="4" align="left">
-          <Avatar
-            name="Sachin Raghunathan"
-            src="/images/profile.jpg"
-            size="md"
-          />
-          <Heading>Sachin Raghunathan</Heading>
+          <Link href={"/"}>
+            <Avatar
+              name="Sachin Raghunathan"
+              src="/images/profile.jpg"
+              size="md"
+            />
+          </Link>
+          <Link href={"/"}>
+            <Heading fontFamily={"monospace"}>Sachin Raghunathan</Heading>
+          </Link>
         </Stack>
         <IconButton
           aria-label="Dark"
