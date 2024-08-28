@@ -1,8 +1,7 @@
 import { Text, TextProps } from "@chakra-ui/react";
-import * as React from "react";
 
 export const Copyright = (props: TextProps) => (
-  <Text fontSize="sm" {...props}>
+  <Text fontFamily={"monospace"} fontSize="sm" {...props}>
     &copy; {new Date().getFullYear()} Sachin Raghunathan
   </Text>
 );

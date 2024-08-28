@@ -20,7 +20,11 @@ const Home = () => {
             <Feature title="Blog" text="Random thoughts" link="/blog" />
           </WrapItem>
           <WrapItem>
-            <Feature title="Resume" link="/Sachin_Raghunathan_27Aug2024.pdf" />
+            <Feature
+              title="Resume"
+              text="Hire me!"
+              link="/Sachin_Raghunathan_27Aug2024.pdf"
+            />
           </WrapItem>
         </Wrap>
       </Center>

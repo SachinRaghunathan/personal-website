@@ -18,7 +18,7 @@ const Intro = () => {
           <Text>I can play the drums 🥁</Text>
           <Text>
             I have more than 15 active credit cards and I use the points to fly
-            business class.
+            business class (not so humble brag, i know)
           </Text>
           <Text>My favorite YouTuber is Veritasium</Text>
           <Text>Feel free to connect using any of the links below!</Text>
